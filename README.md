@@ -1,6 +1,6 @@
-# FileAI Take-Home Assignment — Tower of Hanoi (Reverse State)
+# FileAI Take-Home Assignment, Tower of Hanoi (Reverse State)
 
-Solution to the FileAI take-home assignment: given a state of *n* disks (3 ≤ n ≤ 64) on pegs A, B, C, determine which peg all disks initially started on and how many moves of the optimal algorithm were made to reach that state, or report `impossible` if the state is unreachable.
+Take-home assignment: given a state of *n* disks (3 ≤ n ≤ 64) on pegs A, B, C, determine which peg all disks initially started on and how many moves of the optimal algorithm were made to reach that state, or report `impossible` if the state is unreachable.
 
 ## Repository contents
 
@@ -33,7 +33,7 @@ This means the current position of the **largest disk** tells us exactly which p
 - **Disk k on `dst`** → phases 1–2 are complete, contributing exactly (2^(k−1) − 1) + 1 = **2^(k−1)** moves. The remaining moves belong to "move disks 1..k−1 from `aux` to `dst`". Recurse on k−1 disks and add 2^(k−1).
 - **Disk k on `aux`** → this never happens on the optimal path, so the state is unreachable from this start peg.
 
-Each recursion level eliminates one disk and adds at most one power of two, so the move count is reconstructed in n steps — no simulation of individual moves is ever needed.
+Each recursion level eliminates one disk and adds at most one power of two, so the move count is reconstructed in n steps, no simulation of individual moves is ever needed.
 
 ### Determining the start and destination pegs
 

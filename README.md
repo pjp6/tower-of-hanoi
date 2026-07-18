@@ -67,6 +67,6 @@ I used Claude (Anthropic) as a coding agent throughout this assignment, and dire
 - **Problem analysis:** After recognizing that step-by-step simulation couldn't scale to n = 64, I worked through the reverse-inference approach with Claude's help: the three-phase structure of the optimal solution, why the largest disk's peg reveals the current phase, and how parity determines the destination. I pressure-tested my understanding at each step so I could defend the approach independently.
 - **Implementation:** I wrote the tower_hanoi implementation in this repo myself, based on that understanding and on recursion patterns from my SMU Algorithm Design and Implementation coursework.
 - **Verification:** At my direction, correctness was not taken on trust: Claude built an independent brute-force simulator of the assignment's algorithm and exhaustively checked all 3^n placements for n = 3..11 against it, plus the 10 sample cases and n = 64 edge cases. All passed with zero mismatches.
-- **Documentation:** Claude drafted the complexity analysis and this README, which I reviewed and edited.
 
-In short: the approach was developed collaboratively, the code was written by Claude under my direction, and I own the understanding — I can walk through the recursion, the parity argument, and the complexity analysis without reference to the tool.
+
+

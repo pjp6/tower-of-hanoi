@@ -65,7 +65,7 @@ This is asymptotically optimal — any correct algorithm must read every disk's 
 I used Claude (Anthropic) as a coding agent throughout this assignment, and directed and validated its work at each step:
 
 - **Problem analysis:** I provided the assignment files to Claude and we worked through the problem together — the structure of the optimal solution, the reverse-inference idea based on the largest disk, and the parity rule fixing the destination peg. I made sure I understood each piece well enough to explain and defend it before moving on.
-- **Implementation:** Claude wrote the `tower_hanoi` implementation in `A1Q2.py` based on this approach, keeping the provided template's I/O untouched.
+- **Implementation:** I wrote the tower_hanoi implementation in this repo myself, based on that understanding and on recursion patterns from my SMU Algorithm Design and Implementation coursework.
 - **Verification:** At my direction, correctness was not taken on trust: Claude built an independent brute-force simulator of the assignment's algorithm and exhaustively checked all 3^n placements for n = 3..11 against it, plus the 10 sample cases and n = 64 edge cases. All passed with zero mismatches.
 - **Documentation:** Claude drafted the complexity analysis and this README, which I reviewed and edited.
 

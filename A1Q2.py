@@ -2,25 +2,9 @@ import sys
 
 
 def count_moves(k, src, dst, pos):
-    """Recursively determine how many moves of the optimal algorithm have
-    been made, given that disks 1..k are being moved from peg src to peg
-    dst and disk d currently sits on peg pos[d].
-
-    The optimal (minimum-move) solution for moving k disks from src to dst
-    has a unique three-phase structure:
-      Phase 1: move disks 1..k-1 from src to aux   (2^(k-1) - 1 moves)
-      Phase 2: move disk k from src to dst          (1 move)
-      Phase 3: move disks 1..k-1 from aux to dst    (2^(k-1) - 1 moves)
-
-    So the position of the largest disk k tells us which phase we are in:
-      - disk k on src: phases 2-3 have not happened; the moves made so far
-        all belong to the sub-problem "move 1..k-1 from src to aux".
-      - disk k on dst: phases 1-2 are done (2^(k-1)-1 + 1 = 2^(k-1) moves);
-        the remaining moves belong to "move 1..k-1 from aux to dst".
-      - disk k on aux: never occurs on the optimal path -> unreachable.
-
-    Returns the move count, or None if the state is unreachable.
-    """
+    # The optimal solution for k disks has three phases:
+    #   1..k-1: src->aux (2^(k-1)-1 moves), disk k: src->dst (1 move), 1..k-1: aux->dst.
+    # The position of disk k tells us which phase we are in.
     if k == 0:
         return 0
     aux = 3 - src - dst
